@@ -1,0 +1,600 @@
+/*  
+----------Global---------- 
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #d9d9d9;
+  /* overflow-y: hidden; */
+  /* background-color: black; */
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+/*  
+----------mainContainer---------- 
+*/
+#mainContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+#mainContainer #dotsimg {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -20;
+}
+
+#mainContainer video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 150vh;
+  z-index: -21;
+}
+
+#subcontainer {
+  margin: 0 auto;
+  height: 100vh;
+  width: 80%;
+}
+
+#backgroundcover {
+  background: -webkit-linear-gradient(top, #2f2727, #1a82f7);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 100vh;
+  transition: width 2s;
+  animation-name: introwidth;
+  animation-duration: 2s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes introwidth {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+#mainContainer #backgroundcover #introimagewrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 20%;
+  overflow: hidden;
+}
+
+#mainContainer #backgroundcover img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  animation-name: introimg;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+@keyframes introimg {
+  0% {
+    transla: 50%;
+  }
+  100% {
+    top: -40%;
+  }
+}
+
+/* 
+----------header---------- 
+*/
+
+header {
+  position: relative;
+  height: 20%;
+  overflow: hidden;
+  bottom: 1%;
+  /* border: 1px solid red; */
+  vertical-align: middle;
+  visibility: hidden;
+  animation-name: headeranimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 5.5s;
+}
+
+@keyframes headeranimation {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+header #headwrap {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* border: 1px solid red; */
+}
+
+header #headwrap #main-logo,
+nav,
+#getaccess {
+  display: inline-block;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+header #headwrap #main-logo img {
+  width: 140px;
+  height: auto;
+}
+
+header #headwrap nav {
+  margin-left: 20px;
+}
+
+header #headwrap nav a {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 0.7em;
+  text-decoration: none;
+  padding: 10px 10px;
+  color: #d9d9d9;
+}
+
+header #headwrap nav a:hover {
+  color: #ffffff;
+}
+
+header #headwrap #getaccess {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header #headwrap #getaccess a {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 0.7em;
+  text-decoration: none;
+  padding: 10px 10px;
+  color: #d9d9d9;
+  border: 1px solid #ffffff;
+}
+
+header #headwrap #getaccess a:hover {
+  color: #ffffff;
+}
+
+/* 
+----------section---------- 
+*/
+
+section {
+  margin-left: 50px;
+  border: 2px solid transparent;
+  width: 80%;
+  position: relative;
+  visibility: hidden;
+  bottom: 5%;
+  animation-name: section;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+}
+
+section #contentwrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border: 2px solid transparent;
+  animation-name: border;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 9s;
+}
+
+/* @keyframes border {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: #40e0d0;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: #40e0d0;
+    border-right-color: #40e0d0;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: #40e0d0;
+    border-right-color: #40e0d0;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+} */
+
+
+@keyframes border {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #40e0d0;
+  }
+  50% {
+    width: 0;
+    height: 20%;
+    border-top-color: #40e0d0;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #40e0d0;
+  }
+  100% {
+    width: 100%;
+    height: 20%;
+    border-top-color: #40e0d0;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #40e0d0;
+  }
+}
+
+section #contentwrapper::after {
+  content: "";
+  position: absolute;    
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border: 2px solid transparent;
+  animation-name: border1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 11s;
+}
+
+@keyframes border1 {
+  0% {
+    width: 100%;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: #40e0d0;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: #40e0d0;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: #40e0d0;
+    border-bottom-color: #40e0d0;
+    border-left-color: transparent;
+  }
+}
+
+section::before {
+  content: "";
+  position: absolute;    
+  top: 79%;
+  left: -2px;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border: 2px solid transparent;
+  animation-name: border2;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 11s;
+}
+
+@keyframes border2 {
+  0% {
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #40e0d0;
+  }
+  50% {
+    height: 20%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #40e0d0;
+  }
+  100% {
+    height: 20%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #40e0d0;
+  }
+}
+
+@keyframes section {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+section #contentwrapper {
+  margin: 10% 0 10% -50px;
+}
+
+section #contentwrapper p:first-child {
+  font-size: 1.5em;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+section #contentwrapper .sectiontest {
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+section #contentwrapper #sectionanimationitems {
+  /* border: 1px solid black; */
+  height: 60px;
+  width: 50%;
+  text-align: left;
+  overflow: hidden;
+}
+
+section #contentwrapper #sectionanimationitems ul li {
+  color: #ffffff;
+  text-align: left;
+  position: relative;
+  font-size: 3.5em;
+  display: inline-block;
+  animation-name: sectionliitems;
+  animation-duration: 8s;
+  animation-delay: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes sectionliitems {
+  0% {
+    top: 0px;
+  }
+  33% {
+    top: -58px;
+  }
+  66% {
+    top: -113px;
+  }
+  100% {
+    top: -170px;
+  }
+}
+
+section #contentwrapper input {
+  margin: 10px 0;
+  padding: 10px 0;
+  width: 50%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  color: #d9d9d9;
+}
+
+section #contentwrapper input::placeholder {
+  color: #d9d9d9;
+}
+
+/* 
+----------footer---------- 
+*/
+
+footer {
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+  visibility: hidden;
+  animation-name: footer;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 8s;
+}
+
+@keyframes footer {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    bottom: 5%;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+footer p,
+#socialButtons {
+  display: inline-block;
+  font-size: 0.6em;
+}
+
+footer #socialButtons {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer #socialButtons ul li {
+  display: inline-block;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+footer #socialButtons ul li img {
+  display: inline-block;
+  width: 30px;
+  height: auto;
+}
+
+
+
+
+
+.equaliser-container {
+  height: 10px;
+  width: 20px;
+  margin: 0 0;
+  padding: 0 0 0 0;
+  position: relative;
+}
+
+.colour-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  background: #999797;
+}
+
+.equaliser-column {
+  width: 2px;
+  float: left;
+  margin: 0 1px 0 0;
+  padding: 0;
+  height: 10px;
+  position: relative;
+  list-style-type: none;
+}
+
+.equaliser-column:nth-child(1) .colour-bar {
+  animation: color-bar 2s 1s ease-in-out alternate infinite;
+}
+
+.equaliser-column:nth-child(2) .colour-bar {
+  animation: color-bar 2s 0.5s ease-in-out alternate infinite;
+}
+
+.equaliser-column:nth-child(3) .colour-bar {
+  animation: color-bar 2s 1.5s ease-in-out alternate infinite;
+}
+
+.equaliser-column:nth-child(4) .colour-bar {
+  animation: color-bar 2s 0.25s ease-in-out alternate infinite;
+}
+
+.equaliser-column:nth-child(5) .colour-bar {
+  animation: color-bar 2s 2s ease-in-out alternate infinite;
+}
+
+.equaliser-column:last-child {
+  margin-right: 0;
+}
+
+@keyframes color-bar {
+  0% {
+    height: 1px;
+    background: #999797;
+  }
+  10% {
+    height: 3px;
+    background: #999797;
+  }
+  20% {
+    height: 5px;
+    background: #999797;
+  }
+  30% {
+    height: 2px;
+    background: #999797;
+  }
+  40% {
+    height: 7px;
+    background: #999797;
+  }
+  50% {
+    height: 9px;
+    background: #999797;
+  }
+  60% {
+    height: 3px;
+    background: #999797;
+  }
+  70% {
+    height: 8px;
+    background: #999797;
+  }
+  80% {
+    height: 5px;
+    background: #999797;
+  }
+  90% {
+    height: 3px;
+    background: #999797;
+  }
+  100% {
+    height: 1px;
+    background: #999797;
+  }
+}
